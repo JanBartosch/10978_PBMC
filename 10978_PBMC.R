@@ -10,6 +10,7 @@ pbmc.data <- ReadMtx(mtx = "C:/Users/Admin/Desktop/R-script/10978_PBMC/Raw_Data/
                      features = "C:/Users/Admin/Desktop/R-script/10978_PBMC/Raw_Data/features.tsv",
                      cells =  "C:/Users/Admin/Desktop/R-script/10978_PBMC/Raw_Data/barcodes.tsv")
 
+
 # To check, if the cell count matrix is correct, look at the first 10 columns and rows
 # columns = barcodes ; rows = features/genes
 pbmc.data[1:10,1:10]
