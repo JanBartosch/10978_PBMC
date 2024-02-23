@@ -193,13 +193,13 @@ DoHeatmap(pbmc, features = top10$gene) + NoLegend()
 #   Cluster ID 	Markers 	    Cell Type
 #   0 	        IL7R, CCR7 	  Naive CD4+ T
 #   1 	        CD14, LYZ 	  CD14+ Mono
-#   2 	        IL7R, S100A4 	Memory CD4+
+#   5 	        IL7R, S100A4 	Memory CD4+
 #   3 	        MS4A1 	      B
 #   4 	        CD8A 	CD8+    T
-#   5 	        FCGR3A, MS4A7 FCGR3A+ Mono
-#   6 	        GNLY, NKG7 	  NK
-#   7 	        FCER1A, CST3 	DC
-#   8 	        PPBP 	        Platelet
+#   7 	        FCGR3A, MS4A7 FCGR3A+ Mono
+#   2 	        GNLY, NKG7 	  NK
+#   8 	        FCER1A, CST3 	DC
+#   6 	        PPBP 	        Platelet
 
 #renaming clusters just individually because you already know the names
 new.cluster.ids <- c("Naive CD4 T", "CD14+ Mono", "Memory CD4 T", "B", "CD8 T", "FCGR3A+ Mono", "NK", "DC", "Platelet")
@@ -211,7 +211,7 @@ DimPlot(pbmc, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 library(ggplot2)
 plot <- DimPlot(pbmc, reduction = "umap", label = TRUE, label.size = 4.5) + xlab("UMAP 1") + ylab("UMAP 2") +
   theme(axis.title = element_text(size = 18), legend.text = element_text(size = 18)) + guides(colour = guide_legend(override.aes = list(size = 10)))
-ggsave(filename = "../output/images/pbmc3k_umap.jpg", height = 7, width = 12, plot = plot, quality = 50)
+ggsave(filename = "../output/10978_PBMC_umap.jpg", height = 7, width = 12, plot = plot, quality = 50)
 
 #Saving final document
 saveRDS(pbmc, file = "C:/Users/Admin/Desktop/R-script/Seurat Tutorial JB/Output/pbmc3k_final.rds")
